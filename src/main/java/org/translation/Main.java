@@ -41,14 +41,15 @@ public class Main {
             String country = promptForCountry(translator);
             // TODO CheckStyle: The String "quit" appears 3 times in the file.
             // TODO Checkstyle: String literal expressions should be on the left side of an equals comparison
-            if (country.equals("quit")) {
+            String quit = "quit";
+            if (quit.equals(country)) {
                 break;
             }
             // TODO Task: Once you switch promptForCountry so that it returns the country
             //            name rather than the 3-letter country code, you will need to
             //            convert it back to its 3-letter country code when calling promptForLanguage
             String language = promptForLanguage(translator, country);
-            if (language.equals("quit")) {
+            if (quit.equals(language)) {
                 break;
             }
             // TODO Task: Once you switch promptForLanguage so that it returns the language
@@ -61,7 +62,7 @@ public class Main {
             Scanner s = new Scanner(System.in);
             String textTyped = s.nextLine();
 
-            if ("quit".equals(textTyped)) {
+            if (quit.equals(textTyped)) {
                 break;
             }
         }
@@ -86,7 +87,8 @@ public class Main {
     // Note: CheckStyle is configured so that we don't need javadoc for private methods
     private static String promptForLanguage(Translator translator, String country) {
 
-        // TODO Task: replace the line below so that we sort the languages alphabetically and print them out; one per line
+        // TODO Task: replace the line below so that we sort the languages alphabetically
+        //  and print them out; one per line
         // TODO Task: convert the language codes to the actual language names before sorting
         System.out.println(translator.getCountryLanguages(country));
 
